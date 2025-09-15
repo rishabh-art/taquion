@@ -1,424 +1,549 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Next-Gen Skills, Smart Education, Our Team​, Empowering Minds with AI Knowledge, Tech Institute Shaping Future Tech Leaders, Testimonials​, AI Robotics, ​Get started now!">
-    <meta name="description" content="">
-    <title>Home</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="index.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 6.21.3, nicepage.com">
-    <meta name="referrer" content="origin">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|PT+Sans:400,400i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <title>Taquion - Beyond Next. Beyond Future.</title>
+    <style>
+        /* Base Styles & Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;700&display=swap');
+        
+        :root {
+            --purple: #8b5cf6;
+            --bright-purple: #a855f7;
+            --white: #ffffff;
+            --pink: #ec4899;
+            --blue: #3b82f6;
+            --black: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            padding: 80px 20px;
+            border: 4px solid var(--black);
+            margin-bottom: 20px;
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Neobrutalism Effects */
+        .card, .btn, .input-group {
+            border: 4px solid var(--black);
+            background-color: var(--white);
+            position: relative;
+        }
+        
+        /* Hero Section */
+        #hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--bright-purple) 100%);
+        }
+        
+        .hero-text {
+            z-index: 10;
+        }
+
+        .hero-title {
+            animation: slideInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            color: var(--white);
+            text-shadow: 
+                3px 3px 0 var(--black),
+                -3px -3px 0 var(--black),
+                3px -3px 0 var(--black),
+                -3px 3px 0 var(--black);
+            position: relative;
+        }
+
+        .hero-slogan {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 0 var(--black);
+            animation: slideInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .block {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border: 4px solid var(--white);
+            animation: blockAnimate 15s infinite linear;
+            transition: transform 0.3s ease-out;
+        }
+        .block:nth-child(1) { top: 10%; left: 15%; width: 100px; height: 100px; transform: rotate(15deg); }
+        .block:nth-child(2) { bottom: 20%; right: 10%; width: 150px; height: 150px; transform: rotate(-30deg); animation-delay: 3s; }
+        .block:nth-child(3) { top: 50%; right: 5%; width: 80px; height: 80px; transform: rotate(45deg); animation-delay: 6s; }
+        .block:nth-child(4) { bottom: 5%; left: 25%; width: 200px; height: 200px; transform: rotate(60deg); animation-delay: 9s; }
+        
+        @keyframes blockAnimate {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        /* Products Section */
+        #products {
+            background-color: var(--pink);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            padding: 20px;
+            box-shadow: 8px 8px 0px var(--black);
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0px var(--black);
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Join Us Section */
+        #join-us {
+            background-color: var(--blue);
+            text-align: center;
+        }
+
+        .join-btn {
+            background-color: var(--purple);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 15px 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 6px 6px 0px var(--black);
+            transform: scale(1);
+        }
+        
+        .join-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--bright-purple);
+        }
+        
+        /* Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--bright-purple);
+            margin: 10% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            border: 4px solid var(--black);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 10px 10px 0px var(--black);
+        }
+
+        .close-btn {
+            color: var(--white);
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .modal-form input, .modal-form textarea, .modal-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--black);
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .modal-form button {
+            background-color: var(--purple);
+            color: var(--white);
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .modal-form button:hover {
+            transform: scale(1.02);
+            background-color: var(--blue);
+        }
+        
+        /* Newsletter Section */
+        #newsletter {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .newsletter-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-bar input {
+            padding: 15px;
+            border: 4px solid var(--black);
+            background-color: var(--white);
+        }
+
+        .newsletter-btn {
+            background-color: var(--purple);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 15px 30px;
+            cursor: pointer;
+            box-shadow: 6px 6px 0px var(--black);
+        }
+
+        .newsletter-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--bright-purple);
+        }
+
+        /* Our Team Section */
+        #team {
+            background-color: var(--blue);
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 8px 8px 0px var(--black);
+            border: 4px solid var(--black);
+            transform: scale(1);
+        }
+
+        .team-card:hover {
+            transform: scale(1.05);
+            border-color: var(--pink);
+        }
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        #footer {
+            background-color: var(--purple);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--white);
+            border: 4px solid var(--black);
+        }
+
+        #footer p {
+            font-weight: 700;
+        }
+
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 40px 10px;
+            }
+            .newsletter-bar {
+                flex-direction: column;
+            }
+            .newsletter-bar input, .newsletter-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="hero">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="hero-text">
+            <h1 class="hero-title">TAQUION</h1>
+            <p class="hero-slogan">Beyond Next. Beyond Future.</p>
+        </div>
+    </section>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/logo.webp"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-90 u-header u-header" id="sec-1aae"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="#" class="u-image u-logo u-image-1" data-image-width="1024" data-image-height="1024">
-          <img src="images/logo.webp" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-</li></ul>
-          </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header> 
-    <section class="u-clearfix u-gradient u-valign-middle u-section-1" id="sec-7e2e">
-      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
-        <div class="u-gutter-0 u-layout">
-          <div class="u-layout-col">
-            <div class="u-size-30">
-              <div class="u-layout-row">
-                <div class="u-container-style u-grey-90 u-layout-cell u-radius u-shape-round u-size-40 u-layout-cell-1" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-                  <div class="u-container-layout u-valign-middle u-container-layout-1">
-                    <h5 class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">Beyond next. Beyond Forever.</h5>
-                    <h1 class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Taquion</h1>
-                    <p class="u-text u-text-3">Welcome to our next-generation teaching institute, Taquion for equipping our next generation with the skills they need for leading the world! Learn more about us by clicking the button below, or contact us from the navigation on the top!</p>
-                    <a href="#" class="u-btn u-button-style u-btn-1">About</a>
-                  </div>
+    <div class="container">
+        <section id="products" class="section">
+            <h2 class="animate-on-scroll">PRODUCTS</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>DROPLETS</h3>
+                    <p>Smart water monitoring and saving device.</p>
                 </div>
-                <div class="u-container-style u-image u-image-round u-layout-cell u-radius u-size-20 u-image-1" data-image-width="853" data-image-height="1280">
-                  <div class="u-container-layout u-container-layout-2"></div>
+                <div class="product-card">
+                    <h3>SETU (coming soon)</h3>
+                    <p>Where giving meets needs, a platform.</p>
                 </div>
-              </div>
-            </div>
-            <div class="u-size-30">
-              <div class="u-layout-row">
-                <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-                  <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-xl u-valign-top-sm u-valign-top-xs u-container-layout-3">
-                    <p class="u-text u-text-default u-text-white u-text-4">Our institute is walking to be at the forefront of training students and equipping the skills required for Robotics and AI. We train students for their&nbsp;<span style="font-weight: 700;"> passion<span style="font-weight: 400;"> .</span>
-                      </span>
-                    </p>
-                    <p class="u-text u-text-body-alt-color u-text-default u-text-5">Teaching institute shaping future.</p><span class="u-file-icon u-icon u-icon-1"><img src="images/20959.png" alt=""></span>
-                  </div>
+                <div class="product-card">
+                    <h3>More projects coming soon</h3>
+                    <p>We're always building something new to create a better world.</p>
                 </div>
-                <div class="u-container-style u-image u-image-round u-layout-cell u-radius u-size-40 u-image-2" data-image-width="1280" data-image-height="911">
-                  <div class="u-container-layout u-container-layout-4"></div>
-                </div>
-              </div>
             </div>
-          </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="join-us" class="section">
+            <h2 class="animate-on-scroll">JOIN US</h2>
+            <p style="margin-bottom: 20px; color: var(--white);">Join the movement. We're looking for passionate people to help us build the future.</p>
+            <button id="join-btn" class="join-btn">JOIN US</button>
+        </section>
+    </div>
+
+    <div id="join-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 style="color: var(--white); text-align: center;">APPLY NOW</h2>
+            <form id="contact-form" class="modal-form" action="https://formsubmit.co/6d79e85254f220adece3092241ddb540" method="POST">
+                <input type="hidden" name="_next" value="https://www.taquion.tech/thanks.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="emaiFwhel" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Tell us about yourself and why you want to join Taquion." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-container-align-center u-custom-color-1 u-valign-middle-lg u-valign-middle-xl u-valign-middle-xs u-section-2" id="sec-ed4f">
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-container-align-center u-container-style u-grey-90 u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1"><span class="u-align-center u-file-icon u-icon u-text-white u-icon-1"><img src="images/2814726-e5e1cc22.png" alt=""></span>
-              <h5 class="u-align-center u-text u-text-default-sm u-text-default-xs u-text-1">Robotics Education</h5>
-              <p class="u-align-center u-text u-text-2">Our institute is at the forefront of educating the next generation in robotics and AI.</p>
-            </div>
-          </div>
-          <div class="u-container-align-center u-container-style u-grey-90 u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-text-white u-icon-2"><img src="images/900961-e9e6f91e.png" alt=""></span>
-              <h5 class="u-align-center u-text u-text-default-sm u-text-default-xs u-text-3">AI Learning</h5>
-              <p class="u-align-center u-text u-text-4">With skills for the future, we provide hands-on learning experiences for students to excel.</p>
-            </div>
-          </div>
-          <div class="u-container-align-center u-container-style u-grey-90 u-list-item u-radius u-repeater-item u-shape-round u-list-item-3" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3"><span class="u-align-center u-file-icon u-icon u-text-white u-icon-3"><img src="images/780477-d7fa0b57.png" alt=""></span>
-              <h5 class="u-align-center u-text u-text-default-sm u-text-default-xs u-text-5">Tech Institute</h5>
-              <p class="u-align-center u-text u-text-6">Dedicated instructors guide students to develop skills that will shape the future of technology.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="skrollable u-clearfix u-image u-parallax u-section-3" id="sec-6acf" data-image-width="1280" data-image-height="1132">
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
-    </section>
-    <section class="u-clearfix u-custom-color-1 u-valign-middle u-section-4" id="sec-0cc5">
-      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-grey-90 u-layout-cell u-radius u-shape-round u-size-30 u-layout-cell-1" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-              <div class="u-container-layout u-valign-bottom u-container-layout-1">
-                <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Smart Education</h2>
-                <h4 class="u-custom-font u-font-pt-sans u-text u-text-2">Next-Gen Technology Learning Hub</h4>
-                <p class="u-text u-text-3">With cutting-edge technology, we provide hands-on learning experiences for students to excel.</p>
-                <h6 class="u-text u-text-default u-text-4">Innovative Institute for Robotics Education</h6>
-              </div>
-            </div>
-            <div class="u-container-style u-gradient u-image u-layout-cell u-radius u-shape-round u-size-30 u-image-1" data-image-width="425" data-image-height="283">
-              <div class="u-container-layout u-container-layout-2"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-section-5" id="sec-d340">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Our Team </h2>
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-              <img alt="" class="u-expanded-width u-image u-image-round u-radius u-image-1" data-image-width="1280" data-image-height="853" src="images/photo-1512314889357-e157c22f938d.jpeg" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-              <h5 class="u-custom-font u-font-open-sans u-text u-text-2">Rasmita Pal</h5>
-              <p class="u-text u-text-3">Founder</p>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-              <img alt="" class="custom-expanded u-expanded-width u-image u-image-round u-radius u-image-2" data-image-width="1280" data-image-height="853" src="images/photo-1541844053589-346841d0b34c.jpeg" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-              <h5 class="u-custom-font u-font-open-sans u-text u-text-4">Rishabh Pal</h5>
-              <p class="u-text u-text-5">President and CTO</p>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-              <img alt="" class="u-expanded-width u-image u-image-round u-radius u-image-3" data-image-width="1280" data-image-height="720" src="images/photo-1730724742886-b0e36d1eb067.jpeg" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-              <h5 class="u-custom-font u-font-open-sans u-text u-text-6">Rishita Pal</h5>
-              <p class="u-text u-text-7">CEO and CCO</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-custom-color-1 u-section-6" id="sec-d06e">
-      <h2 class="u-align-center u-custom-font u-font-pt-sans u-text u-text-default u-text-1">Empowering Minds with AI Knowledge</h2>
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-black u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-align-left u-file-icon u-icon u-icon-rounded u-palette-1-base u-radius u-text-white u-icon-1"><img src="images/3483127-d1c058cb.png" alt=""></span>
-              <h5 class="u-align-left u-text u-text-default u-text-2">Advanced Tech Education for Future Innovators</h5>
-              <p class="u-align-left u-text u-text-3">We offer comprehensive courses that cover a wide range of topics in emerging technologies such as AI.&nbsp;</p>
-            </div>
-          </div>
-          <div class="u-black u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-align-left u-file-icon u-icon u-icon-rounded u-palette-1-base u-radius u-text-white u-icon-2"><img src="images/8593364-08248f1e.png" alt=""></span>
-              <h5 class="u-align-left u-text u-text-default u-text-4">Future Tech</h5>
-              <p class="u-align-left u-text u-text-5">Students gain practical knowledge through our innovative programs to prepare them for tomorrow's challenges.</p>
-            </div>
-          </div>
-          <div class="u-black u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-3" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-align-left u-file-icon u-icon u-icon-rounded u-palette-1-base u-radius u-text-white u-icon-3"><img src="images/2591945-7b224637.png" alt=""></span>
-              <h5 class="u-align-left u-text u-text-default u-text-6">Innovative Teaching</h5>
-              <p class="u-align-left u-text u-text-7">Join us to explore the exciting world of robotics, AI, and other cutting-edge technologies taught in unique and innovative teaching methods to stay one step ahead.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="skrollable u-clearfix u-container-align-center u-custom-color-1 u-valign-top-md u-valign-top-sm u-valign-top-xs u-section-7" id="sec-644e">
-      <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-valign-top u-container-layout-1">
-                <h2 class="u-align-left u-text u-text-1">Tech Institute Shaping Future Tech Leaders</h2>
-                <h4 class="u-align-left u-text u-text-2">Next-Gen Robotics and AI Education Center</h4>
-                <p class="u-align-left u-text u-text-3"></p>
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-bottom u-container-layout-2">
-                <p class="u-align-left u-text u-text-4">Our expert instructors are dedicated to preparing students for the future by providing hands-on training in robotics, AI, and other innovative technologies.</p><span class="u-align-left u-file-icon u-icon u-icon-1"><img src="images/20959.png" alt=""></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="skrollable u-container-style u-expanded-width u-gradient u-group u-image u-parallax u-radius u-shape-round u-image-1" data-image-width="425" data-image-height="283">
-        <div class="u-container-layout u-container-layout-3"></div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-valign-bottom-sm u-valign-bottom-xs u-section-8" id="sec-9278">
-      <h3 class="u-align-center u-text u-text-1"> 5 millions of companies are using ai to power up their systemworld wide</h3>
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-container-align-center u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-              <img class="u-image u-image-contain u-image-default u-image-1" src="images/logo4.png" alt="" data-image-width="274" data-image-height="131">
-              <h5 class="u-align-center u-text u-text-default u-text-2">Ogie</h5>
-              <p class="u-align-center u-text u-text-default u-text-3"> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="u-container-align-center u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-              <img class="u-image u-image-contain u-image-default u-image-2" src="images/logo5.png" alt="" data-image-width="153" data-image-height="124">
-              <h5 class="u-align-center u-text u-text-default u-text-4">Elements</h5>
-              <p class="u-align-center u-text u-text-default u-text-5"> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="u-container-align-center u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-3" data-animation-name="flipIn" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-              <img class="u-image u-image-contain u-image-default u-image-3" src="images/logo8.png" alt="" data-image-width="401" data-image-height="152">
-              <h5 class="u-align-center u-text u-text-default u-text-6">Holistic Lifes<br>
-              </h5>
-              <p class="u-align-center u-text u-text-default u-text-7"> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="u-container-align-center u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-4" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-              <img class="u-image u-image-contain u-image-default u-image-4" src="images/logo6.png" alt="" data-image-width="144" data-image-height="184">
-              <h5 class="u-align-center u-text u-text-default u-text-8">Brighto</h5>
-              <p class="u-align-center u-text u-text-default u-text-9"> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="skrollable u-clearfix u-image u-parallax u-section-9" id="sec-76ff" data-image-width="425" data-image-height="283">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-group u-radius u-shape-round u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="0">
-          <div class="u-container-layout u-valign-top u-container-layout-1">
-            <h3 class="u-text u-text-default u-text-1">Modern Learning</h3>
-            <p class="u-text u-text-default u-text-2">Dedicated instructors guide students to develop skills that will shape the future of technology.</p><span class="u-file-icon u-icon u-icon-1" data-href="#"><img src="images/20959.png" alt=""></span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-container-align-center u-custom-color-1 u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-section-10" id="sec-76fd">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Testimonials </h2>
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-align-center u-container-style u-grey-90 u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-              <p class="u-align-center u-text u-text-2">Next generation coding courses transforming absolute beginners to skilled competitors!</p>
-              <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="1280" data-image-height="854"></div>
-              <h5 class="u-align-center u-custom-font u-font-pt-sans u-text u-text-3">Rishabh Pal</h5>
-              <h6 class="u-align-center u-custom-font u-font-open-sans u-text u-text-4">Student</h6>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-grey-90 u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-            <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-              <p class="u-align-center u-text u-text-5">The teaching institute's cutting-edge curriculum on robotics and AI truly prepares students for the future. Highly recommended!</p>
-              <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="850" data-image-height="1280"></div>
-              <h5 class="u-align-center u-custom-font u-font-pt-sans u-text u-text-6">Mr. Dog</h5>
-              <h6 class="u-align-center u-custom-font u-font-open-sans u-text u-text-7">Leader of Dog's Army</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-valign-middle-lg u-valign-middle-xl u-section-11" id="sec-3a1b" data-image-width="425" data-image-height="283">
-      <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-default u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">266</h3>
-              <p class="u-align-center u-text u-text-body-alt-color u-text-2">million companies are using AI​.</p>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-default u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">97</h3>
-              <p class="u-align-center u-text u-text-body-alt-color u-text-4">million jobs will be created due to AI. </p>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-default u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">92</h3>
-              <p class="u-align-center u-text u-text-body-alt-color u-text-6">percent of institutions use AI REGULARLY </p>
-            </div>
-          </div>
-          <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
-              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-default u-text-7" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">1</h3>
-              <p class="u-align-center u-text u-text-body-alt-color u-text-8">students interacted with Taquion.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-container-align-left u-custom-color-1 u-section-12" id="sec-ea29">
-      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-col">
-            <div class="u-size-30">
-              <div class="u-layout-row">
-                <div class="u-container-align-left u-container-style u-layout-cell u-size-40 u-layout-cell-1" data-animation-name="flipIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="X">
-                  <div class="u-container-layout u-valign-middle u-container-layout-1">
-                    <h5 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-default u-text-1">Futuristic Tech Training for Tomorrow's Leaders</h5>
-                    <h2 class="u-align-left u-custom-font u-font-montserrat u-text u-text-2">AI Robotics</h2>
-                    <p class="u-align-left u-text u-text-3">We offer comprehensive courses that cover a wide range of topics in emerging technologies.</p>
-                    <h5 class="u-align-left u-custom-font u-font-lato u-text u-text-4">Leading Institute for Next-Gen Tech Education</h5>
-                    <p class="u-align-left u-text u-text-5">Join us on an exciting educational journey where you will gain the skills and knowledge needed to excel in the ever-evolving fields of robotics, AI, and technology.</p>
-                  </div>
-                </div>
-                <div class="u-container-style u-image u-layout-cell u-radius u-shape-round u-size-20 u-image-1" data-image-width="1280" data-image-height="853">
-                  <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2"></div>
-                </div>
-              </div>
-            </div>
-            <div class="u-size-30">
-              <div class="u-layout-row">
-                <div class="u-container-style u-grey-90 u-layout-cell u-radius u-shape-round u-size-20 u-layout-cell-3" data-animation-name="flipIn" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="X">
-                  <div class="u-container-layout u-valign-middle u-container-layout-3">
-                    <h5 class="u-custom-font u-font-montserrat u-text u-text-default u-text-6">Empowering Future with Robotics and AI Education</h5>
-                    <p class="u-text u-text-default u-text-7">Welcome to our cutting-edge teaching institute where we specialize in next-generation robotics, artificial intelligence, and other advanced technologies.</p>
-                  </div>
-                </div>
-                <div class="u-container-align-center u-container-style u-image u-image-round u-layout-cell u-radius u-size-40 u-image-2" data-image-width="1280" data-image-height="853">
-                  <div class="u-container-layout u-container-layout-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-section-13" id="sec-11c2">
-      <div class="u-expanded-width u-form u-grey-90 u-radius u-form-1">
-        <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" source="email" name="form" style="padding: 50px;">
-          <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-1">
-            <label for="name-ebb6" class="u-label">First Name</label>
-            <input type="text" placeholder="Enter your First Name" id="name-ebb6" name="name-1" class="u-border-none u-input u-input-rectangle u-radius u-input-1" required="">
-          </div>
-          <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
-            <label for="name-ebb6" class="u-label">Last Name</label>
-            <input type="text" placeholder="Enter your Last Name" id="name-ebb6" name="name-2" class="u-border-none u-input u-input-rectangle u-radius u-input-2" required="">
-          </div>
-          <div class="u-form-email u-form-group">
-            <label for="email-9807" class="u-label">Email</label>
-            <input type="email" placeholder="Enter a valid email address" id="email-9807" name="email" class="u-border-none u-input u-input-rectangle u-radius u-input-3" required="">
-          </div>
-          <div class="u-form-group u-form-message">
-            <label for="message-9807" class="u-label">Message</label>
-            <textarea placeholder="Enter your message" rows="4" cols="50" id="message-9807" name="message" class="u-border-none u-input u-input-rectangle u-radius u-input-4" required=""></textarea>
-          </div>
-          <div class="u-align-center u-form-group u-form-submit">
-            <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-            <input type="submit" value="submit" class="u-form-control-hidden">
-          </div>
-          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-          <input type="hidden" value="" name="recaptchaResponse">
-          <input type="hidden" name="formServices" value="826361d9-a0e9-2815-965e-e8b7d7b2af1a">
-        </form>
-      </div>
-      <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-valign-top u-container-layout-1">
-                <h2 class="u-text u-text-default u-text-1"> Get started now!</h2>
-                <h4 class="u-text u-text-default u-text-2"> If you would like to work with us or just want to get in touch, we’d love to hear from you!</h4>
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-top-xs u-container-layout-2">
-                <p class="u-text u-text-3"> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
     
+    <div class="container">
+        <section id="newsletter" class="section">
+            <h2 class="animate-on-scroll">NEWSLETTER</h2>
+            <p style="margin-bottom: 20px;">Stay up to date on our projects and progress.</p>
+            <form class="newsletter-bar" action="https://formsubmit.co/6d79e85254f220adece3092241ddb540" method="POST">
+                <input type="hidden" name="_next" value="https://taquion.tech/thanks.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Newsletter Signup!">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">SIGN UP</button>
+            </form>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="team" class="section">
+            <h2 class="animate-on-scroll">OUR TEAM</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>RASMITA PAL</h3>
+                    <p>Founder</p>
+                </div>
+                <div class="team-card">
+                    <h3>RAMKRISHNA PAL</h3>
+                    <p>President</p>
+                </div>
+                <div class="team-card">
+                    <h3>RISHITA PAL</h3>
+                    <p>CEO</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <footer id="footer">
+            <p>TAQUION registered and coded with passion by Rishabh Pal.</p>
+        </footer>
+    </div>
     
-    
-    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-e586"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Powered by palrishabh.com <br/>*Terms and Conditions of Palrishabh.com apply<br>®️Taquion.
-        </p>
-      </div></footer>
-  
-</body></html>
+    <script>
+        // Modal logic
+        const modal = document.getElementById("join-modal");
+        const btn = document.getElementById("join-btn");
+        const span = document.getElementsByClassName("close-btn")[0];
+
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        
+        // Fade-in on scroll animation
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.animation = 'none'; /* Prevents re-animation */
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Interactive blocks
+        const blocks = document.querySelectorAll('.block');
+        const hero = document.getElementById('hero');
+
+        hero.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            blocks.forEach(block => {
+                const rect = block.getBoundingClientRect();
+                const blockCenterX = rect.left + rect.width / 2;
+                const blockCenterY = rect.top + rect.height / 2;
+
+                // Calculate distance between mouse and block center
+                const deltaX = mouseX - blockCenterX;
+                const deltaY = mouseY - blockCenterY;
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                if (distance < 200) { // Reaction radius
+                    // Calculate repulsion force (stronger when closer)
+                    const force = (1 - distance / 200) * 100;
+                    
+                    // Calculate repulsion direction
+                    const angle = Math.atan2(deltaY, deltaX);
+                    const moveX = -Math.cos(angle) * force;
+                    const moveY = -Math.sin(angle) * force;
+
+                    // Apply transform with both rotation and translation
+                    const currentRotation = block.style.transform.match(/rotate\(([^)]+)\)/) || ['', '0deg'];
+                    block.style.transform = `translate(${moveX}px, ${moveY}px) ${currentRotation[0]}`;
+                } else {
+                    // Reset position if mouse is far away
+                    block.style.transform = block.style.transform.replace(/translate\([^)]+\) /, '');
+                }
+            });
+        });
+
+        // Reset blocks position when mouse leaves hero section
+        hero.addEventListener('mouseleave', () => {
+            blocks.forEach(block => {
+                block.style.transform = block.style.transform.replace(/translate\([^)]+\) /, '');
+            });
+        });
+    </script>
+</body>
+</html>
